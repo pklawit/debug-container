@@ -13,7 +13,7 @@ RUN apk update && \
     apk add --update curl jq gnupg && \
     apk add -q python3 py3-pip py3-requests py3-yaml && \
     apk add -q openssl && \
-    apg add -q busybox-extras && \
+    apk add -q busybox-extras && \
     addgroup --system --gid "${GID}" "${GROUPNAME}" && \
     adduser --disabled-password --gecos "" --ingroup "${GROUPNAME}" --uid "${UID}" "${USER}" && \
     echo "${USER} ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers && \
