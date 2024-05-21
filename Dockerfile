@@ -29,8 +29,7 @@ RUN apk update && \
     curl -LO https://get.helm.sh/helm-v3.14.0-rc.1-linux-amd64.tar.gz && \
     tar -zxvf helm-v3.14.0-rc.1-linux-amd64.tar.gz && mv linux-amd64/helm /usr/local/bin/helm && \
     curl -LO https://github.com/camptocamp/helm-sops/releases/download/20220419-3/helm-sops_20220419-3_linux_amd64.tar.gz && \
-    tar -xvf helm-sops_20220419-3_linux_amd64.tar.gz && mv helm-sops /usr/local/bin/ && chmod +x /usr/local/bin/helm-sops && \
+    tar -xvf helm-sops_20220419-3_linux_amd64.tar.gz && mv helm-sops /usr/local/bin/ && chmod +x /usr/local/bin/helm-sops
 
 USER ${USER}
 WORKDIR /home/${USER}
-    # adduser --disabled-password --gecos "" --home "$(pwd)" --ingroup "${GROUPNAME}" --no-create-home --uid "${UID}" "${USER}" && \
