@@ -1,6 +1,6 @@
 ARG ALPINE_BASE=3.19.1
 
-FROM hub.docker.com/alpine:${ALPINE_BASE}
+FROM docker.io/library/alpine:${ALPINE_BASE}
 USER root
 
 ARG USER=appuser
