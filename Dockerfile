@@ -8,13 +8,12 @@ ARG GROUPNAME=appuser
 ARG UID=1012
 ARG GID=1012
 
-COPY requirements_sdl_validator.txt /tmp/requirements_sdl_validator.txt
-
 RUN apk update && \
     apk add --update git bash sudo && \
     apk add --update curl jq gnupg && \
     apk add -q python3 py3-pip py3-requests py3-yaml && \
     apk add -q openssl && \
+    apg add -q busybox-extras && \
     addgroup --system --gid "${GID}" "${GROUPNAME}" && \
     adduser --disabled-password --gecos "" --ingroup "${GROUPNAME}" --uid "${UID}" "${USER}" && \
     echo "${USER} ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers && \
